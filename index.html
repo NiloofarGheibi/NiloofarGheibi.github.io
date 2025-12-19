@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niloofar Gheibi | Engineering Manager</title>
+    <meta name="description" content="Engineering Manager with 8 years of experience in tech. Based in Berlin, Germany.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --persian-red: #C72C41;
+            --light-gray: #F5F5F5;
+            --mid-gray: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Header / Hero */
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            border: 3px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--mid-gray);
+        }
+        
+        .hero-content h1 {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--mid-gray);
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid var(--persian-red);
+            transition: color 0.2s ease;
+        }
+        
+        .contact-links a:hover {
+            color: var(--persian-red);
+        }
+        
+        /* Main content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 6rem;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h3 {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .section-line {
+            flex: 1;
+            height: 2px;
+            background: var(--black);
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            padding: 2rem;
+            border: 2px solid var(--black);
+            transition: all 0.2s ease;
+        }
+        
+        .service-card:hover {
+            border-color: var(--persian-red);
+            transform: translateY(-4px);
+        }
+        
+        .service-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .service-description {
+            color: var(--mid-gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Experience */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .experience-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-period {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+        }
+        
+        .experience-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-company {
+            font-weight: 500;
+            color: var(--persian-red);
+            margin-bottom: 1rem;
+        }
+        
+        .experience-description {
+            color: var(--mid-gray);
+            line-height: 1.7;
+        }
+        
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .education-item {
+            padding: 2rem;
+            background: var(--light-gray);
+        }
+        
+        .education-degree {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-school {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-details {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+        }
+        
+        /* Technologies */
+        .tech-categories {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .tech-category h4 {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .tech-tag {
+            padding: 0.5rem 1rem;
+            background: var(--light-gray);
+            border: 1px solid var(--black);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+        }
+        
+        /* Contact Form Section */
+        .contact-section {
+            max-width: 1200px;
+            margin: 6rem auto 0;
+            padding: 0 2rem 4rem;
+        }
+        
+        .contact-section .section-header {
+            margin-bottom: 3rem;
+        }
+        
+        .contact-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 1rem;
+            border: 2px solid var(--black);
+            background: var(--white);
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--persian-red);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            padding: 1rem 3rem;
+            background: var(--persian-red);
+            color: var(--white);
+            border: 2px solid var(--persian-red);
+            font-weight: 600;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .submit-button:hover {
+            background: transparent;
+            color: var(--persian-red);
+        }
+        
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .form-status {
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 2px solid var(--black);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
+        .form-status.success {
+            display: block;
+            border-color: var(--persian-red);
+            background: rgba(199, 44, 65, 0.1);
+        }
+        
+        .form-status.error {
+            display: block;
+            border-color: var(--black);
+            background: var(--light-gray);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--black);
+            color: var(--white);
+            margin: 0;
+        }
+        
+        .cta-section h3 {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--mid-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 4rem 1.5rem 3rem;
+            }
+            
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.2rem;
+            }
+            
+            main {
+                padding: 1.5rem;
+            }
+            
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .section-line {
+                width: 100%;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero-grid">
+            <div class="profile-photo">
+                <img src="assets/niloofar-gheibi.jpg" alt="Niloofar Gheibi">
+            </div>
+            <div class="hero-content">
+                <h1>Niloofar Gheibi</h1>
+                <h2>Engineering Manager</h2>
+                <p class="hero-description">
+                    Engineering Manager with +8 years of experience working in tech. Based in Berlin, leading cross-functional teams and building systems that serve millions of users. Passionate about technical excellence and inclusive team cultures.
+                </p>
+                <div class="contact-links">
+                    <a href="https://github.com/NiloofarGheibi">Github</a>
+                    <a href="https://linkedin.com/in/niloofar-gheibi" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://medium.com/@niloofar.gheibi" target="_blank" rel="noopener">Medium</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section id="services">
+            <div class="section-header">
+                <h3>How I Can Help</h3>
+                <div class="section-line"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-title">Engineering Leadership</div>
+                    <p class="service-description">
+                        Building and scaling high-performing engineering teams with focus on technical excellence and sustainable delivery.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-title">Hiring Support</div>
+                    <p class="service-description">
+                        Specializing in diverse talent acquisition and recruiting female engineers. Interview processes and employer branding.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-title">Career Development</div>
+                    <p class="service-description">
+                        Empowering growth through personalized coaching and collaborative career planning.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-title">Diversity Advocacy</div>
+                    <p class="service-description">
+                        Leading #IamRemarkable workshops and diversity initiatives for inclusive engineering cultures.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-title">Career Coaching</div>
+                    <p class="service-description">
+                        One-on-one sessions for personalized career plans and navigating professional transitions in tech.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-title">Technical Guidance</div>
+                    <p class="service-description">
+                        Hands-on mentorship in distributed systems, API design, and cloud architecture.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <div class="section-header">
+                <h3>Experience</h3>
+                <div class="section-line"></div>
+            </div>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-period">Oct 2025 – Present</div>
+                    <div>
+                        <div class="experience-title">Engineering Manager</div>
+                        <div class="experience-company">Lyft · Berlin/Munich, Germany</div>
+                        <div class="experience-description">
+                            Leading 3 cross-functional teams (11 engineers) within the Mapping Platform organization. Overseeing Map Tooling, Curation Platform, and Core Map Build systems supporting over 800 million rides annually.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-period">Nov 2021 – Oct 2025</div>
+                    <div>
+                        <div class="experience-title">Engineering Manager</div>
+                        <div class="experience-company">Zalando SE · Berlin, Germany</div>
+                        <div class="experience-description">
+                            Led 7 engineers across Customer Experience Model and Sales & Returns Insights domains, serving 51M+ customers in 25 markets. Achieved 88% team engagement and drove €1.4M+ annual profit increase while maintaining 80% model accuracy.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-period">July 2021 – Nov 2021</div>
+                    <div>
+                        <div class="experience-title">Senior Software Engineer</div>
+                        <div class="experience-company">Zalando SE · Berlin, Germany</div>
+                        <div class="experience-description">
+                            Led technical solution designs for partner-facing services. Introduced metrics, SLOs, and runbooks, resulting in 50% faster resolution time.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-period">Nov 2018 – July 2021</div>
+                    <div>
+                        <div class="experience-title">Software Engineer</div>
+                        <div class="experience-company">Zalando SE · Berlin, Germany</div>
+                        <div class="experience-description">
+                            Backend Engineer in Identity and Access Management (IAM). Developed custom rate limiter for API Gateway serving over 4,000 fashion brands. Served as 24/7 on-call Engineer for Tier-2 & Tier-3 applications.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-period">Jan 2017 – Nov 2018</div>
+                    <div>
+                        <div class="experience-title">Distributed System Engineer</div>
+                        <div class="experience-company">Preh Car Connect · Dresden, Germany</div>
+                        <div class="experience-description">
+                            Developed map importer for car navigation using Elasticsearch for Volkswagen vehicles. Designed APIs for map information delivery with full-text search capabilities.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education">
+            <div class="section-header">
+                <h3>Education</h3>
+                <div class="section-line"></div>
+            </div>
+            <div class="education-grid">
+                <div class="education-item">
+                    <div class="education-degree">Master's Degree</div>
+                    <div class="education-school">Technische Universität Dresden</div>
+                    <div class="education-details">Distributed Systems Engineering · 2016-2018 · Dresden, Germany</div>
+                    <div class="education-details">GPA: 3.3 (USA) - 2.0/5 (Germany)</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-degree">Bachelor's Degree</div>
+                    <div class="education-school">Shahid Beheshti University</div>
+                    <div class="education-details">Computer Hardware Engineering · 2012-2016 · Tehran, Iran</div>
+                    <div class="education-details">GPA: 3.69 (USA) - 17.64/20 (Iran)</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="technologies">
+            <div class="section-header">
+                <h3>Skills & Technologies</h3>
+                <div class="section-line"></div>
+            </div>
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h4>Leadership & Management</h4>
+                    <div class="tech-list">
+                        <span class="tech-tag">Capacity Planning</span>
+                        <span class="tech-tag">Roadmap Building</span>
+                        <span class="tech-tag">Career Development</span>
+                        <span class="tech-tag">Stakeholder Management</span>
+                        <span class="tech-tag">Community Building</span>
+                        <span class="tech-tag">Workshop Facilitation</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h4>Technologies</h4>
+                    <div class="tech-list">
+                        <span class="tech-tag">RESTful APIs</span>
+                        <span class="tech-tag">Event-Based Systems</span>
+                        <span class="tech-tag">Postgres</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Airflow</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Golang</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scala</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h4>Languages</h4>
+                    <div class="tech-list">
+                        <span class="tech-tag">English: Professional</span>
+                        <span class="tech-tag">German: Intermediate</span>
+                        <span class="tech-tag">Turkish: Intermediate</span>
+                        <span class="tech-tag">Persian: Native</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h3>Get in Touch</h3>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-form-container">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mbdrdgod" method="POST">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Interested In</label>
+                    <select id="service" name="service">
+                        <option value="">Select a service (optional)</option>
+                        <option value="Engineering Leadership">Engineering Leadership</option>
+                        <option value="Hiring Support">Hiring Support</option>
+                        <option value="Career Development">Career Development</option>
+                        <option value="Diversity Advocacy">Diversity Advocacy</option>
+                        <option value="Career Coaching">Career Coaching</option>
+                        <option value="Technical Guidance">Technical Guidance</option>
+                        <option value="Project Validation & Tech Execution">Project Validation & Tech Execution</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+                
+                <div class="form-status" id="formStatus"></div>
+            </form>
+        </div>
+    </section>
+    
+    <div class="cta-section">
+        <h3>Available for Collaboration</h3>
+        <p>Engineering leadership, hiring support, career coaching, and tech execution guidance for your project ideas.</p>
+    </div>
+    
+    <footer>
+        <p>© 2025 Niloofar Gheibi · Based in Berlin, Germany · EU Citizen</p>
+    </footer>
+    
+    <script>
+        // Handle form submission
+        const form = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = form.querySelector('.submit-button');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    formStatus.className = 'form-status success';
+                    formStatus.textContent = 'Thanks for reaching out! I\'ll get back to you soon.';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formStatus.className = 'form-status error';
+                formStatus.textContent = 'Oops! Something went wrong. Please try again or email me directly.';
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            }
+        });
+    </script>
+</body>
+</html>
